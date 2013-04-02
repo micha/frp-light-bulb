@@ -1,4 +1,4 @@
-# nim
+# The Lightbulb Problem in FRP
 
 This is a ClojureScript application built with
 [HLisp](https://github.com/tailrecursion/lein-hlisp) and
