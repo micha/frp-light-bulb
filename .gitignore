@@ -1,0 +1,12 @@
+.*.swn
+.*.swo
+.*.swp
+.*.jar
+.*.class
+.lein-*
+/target
+/lib
+/classes
+/checkouts
+/hlwork
+pom.xml

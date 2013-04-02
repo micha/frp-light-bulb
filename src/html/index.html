@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Do we need loops in Javelin?</title>
+  </head>
+  <body>
+    <script type="text/hlisp">
+      (ns lightbulb
+        (:require-macros
+          [hlisp.reactive.macros        :refer [reactive-attributes]]
+          [tailrecursion.javelin.macros :refer [cell mirror]])
+        (:require
+          [lightbulb.core               :as c]
+          [hlisp.reactive               :as r]))
+    </script>
+
+    <reactive-attributes>
+      <div>
+
+        <h3>Do we need loops?</h3>
+
+        <p>You can adjust the sunlight intensity and the target photocell 
+           voltage. The bulb voltage and the actual photocell voltages are
+           computed values.</p>
+
+        <label>
+          <input type="range" step="0.1" min="0" max="10" value="0"
+          do="(r/value! c/sunlight-intensity)
+              (r/on! :change #(reset! c/sunlight-intensity (js/parseFloat (.-value (.-target %)))))"/>
+          Sunlight Intensity
+        </label>
+
+        <br>
+
+        <label>
+          <input readonly="true" type="range" step="0.1" min="0" max="10" value="0"
+            do="(r/value! c/v-bulb)"/>
+          Bulb Voltage
+        </label>
+
+        <br>
+
+        <label>
+          <input readonly="true" type="range" step="0.1" min="0" max="10" value="0"
+            do="(r/value! c/v-photocell)"/>
+          Photocell Voltage
+        </label>
+
+        <br>
+
+        <label>
+          <input type="range" step="0.1" min="0" max="10" value="0"
+          do="(r/value! c/v-photocell-target)
+              (r/on! :change #(reset! c/v-photocell-target (js/parseFloat (.-value (.-target %)))))"/>
+          Target Photocell Voltage
+        </label>
+
+      </div>
+    </reactive-attributes>
+  </body>
+</html>

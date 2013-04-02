@@ -1,0 +1,1 @@
+resources/public/main.js
