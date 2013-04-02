@@ -24,8 +24,7 @@
 
         <label>
           <input type="range" step="0.1" min="0" max="10" value="0"
-          do="(r/value! c/sunlight-intensity)
-              (r/on! :change #(reset! c/sunlight-intensity (js/parseFloat (.-value (.-target %)))))"/>
+          do="(r/on! :change #(reset! c/sunlight-intensity (js/parseFloat (.-value (.-target %)))))"/>
           Sunlight Intensity
         </label>
 
@@ -49,8 +48,7 @@
 
         <label>
           <input type="range" step="0.1" min="0" max="10" value="0"
-          do="(r/value! c/v-photocell-target)
-              (r/on! :change #(reset! c/v-photocell-target (js/parseFloat (.-value (.-target %)))))"/>
+          do="(r/on! :change #(reset! c/v-photocell-target (js/parseFloat (.-value (.-target %)))))"/>
           Target Photocell Voltage
         </label>
 

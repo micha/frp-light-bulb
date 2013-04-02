@@ -2,12 +2,10 @@
   (:require-macros
     [tailrecursion.javelin.macros :refer [cell mirror]]) 
   (:require
-    [tailrecursion.javelin :as j])
-  
-  )
+    [tailrecursion.javelin :as j]))
 
 (defn between [x low high]
-  (min high (max low x)))
+  (-> x (max low) (min high)))
 
 (def sunlight-intensity   (cell 0))
 (def v-photocell-target   (cell 0))
